@@ -1,6 +1,5 @@
 # Some basic R and pandas maneuvers
 
----
 ## Select
 R
 ```R
@@ -17,7 +16,6 @@ df.drop('var', 1)
 df.insert(loc=idx, column='var', value=[])
 ```
 
----
 ## Arrange
 R
 ```R
@@ -30,7 +28,6 @@ Python
 df.sort_values('var', ascending=False)
 ```
 
----
 ## Grouping
 R
 ```R
@@ -45,7 +42,6 @@ df.groupby(['group1', 'group2'])
 df.reset_index() / or when grouping: df.groupby('group1', as_index=False)
 ```
 
----
 ## Summarise / Aggregate df by group
 R
 ```R
@@ -68,7 +64,6 @@ df.groupby('group1')['var1'].agg({'mean_col' : np.mean()})
 df.groupby(['group1', 'group2'])['var1].agg(['mean', 'sum', 'count', 'size'])
 ```
 
----
 ## Distinct
 R
 ```R
@@ -81,20 +76,34 @@ df.drop_duplicates()
 df.drop_duplicates(subset='var') # returns dataframe with unique values of var
 ```
 
----
 ## Sample
 R
-```python
+```R
 sample_n(df, 100)
 sample_frac(df, 0.5)
 ```
 
 Python
-```R
+```python
 df.sample(100)
-df.sample(frac=0.5) 
+df.sample(frac=0.5)
 ```
 
+## Get number of unique sort_values
+R
+```R
+table(df$var1)
+table(df$var1, df$var2)
+```
+
+Python
+```python
+df['var'].value_counts()
+
+# margins show totals
+df.crosstab(index=df['index var'], columns=df['column var'], margins=True)
+
+```
 
 
 
