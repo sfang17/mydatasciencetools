@@ -89,7 +89,7 @@ df.sample(100)
 df.sample(frac=0.5)
 ```
 
-## Get number of unique sort_values
+## Get number of unique values
 R
 ```R
 table(df$var1)
@@ -102,10 +102,32 @@ df['var'].value_counts()
 
 # margins show totals
 df.crosstab(index=df['index var'], columns=df['column var'], margins=True)
-
 ```
 
+## Concat/binding
+R
+```R
+rbind(df1, df2)
+cbind(df1, df2)
+```
 
+Python
+```python
+pd.concat([df1, df2], axis=0)
+pd.concat([df1, df2], axis=1)
+```
 
+## Pivoting
+R
+```R
+# from wide format
+df %>% pivot_longer(cols, names_to='name for columns', values_to='name for values')
+# from long format
+df %>% pivot_wider(names_from = `column names`, values_from = `column value`)
+```
 
-#
+Python
+```python
+pd.melt(df, id_vars=['constant row'], value_vars=['col1', 'col2'], var_name='var name', value_name='val name')
+pd.pivot(columns = 'column names', values = 'column value')
+```
