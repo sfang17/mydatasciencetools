@@ -3,7 +3,7 @@ import numpy as np
 from scipy import stats
 
 
-corr_categorical(d):
+def corr_categorical(d):
     d = d.apply(lambda x : pd.factorize(x)[0])+1
     d_correlations = pd.DataFrame([chisquare(d[x].values, f_exp=d.values.T, axis=1)[0] for x in d])
     return d_correlations
