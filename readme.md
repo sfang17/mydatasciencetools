@@ -1,3 +1,3 @@
-# Cheatsheets
+# Mydatasciencetools
 
-This is where I'm going to keep a reference guide for R, dplyr, pandas, numpy, sklearn, etc.
+This is a collection of cheatsheets and code that are useful for DS things.
