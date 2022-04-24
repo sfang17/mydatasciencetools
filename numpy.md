@@ -20,6 +20,7 @@ np.NINF
 np.arange(start, stop, step)
 np.linspace(start, stop, num)
 np.random.normal(loc=mean, scale=stdev, size=n)
+np.random.choice(x, size) # resample
 
 # mats
 np.zeros((shape))
