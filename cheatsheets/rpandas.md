@@ -3,9 +3,11 @@
 ## Select
 ```python
 select(df, -var)
+a %in% b | !(a %in% b)
 
 df.drop('var', 1)
 df.insert(loc=idx, column='var', value=[]) # inserting columns
+a.isin(b) | ~a.isin(b)
 ```
 
 ## Arrange/sort
@@ -108,4 +110,9 @@ df_ = df %>% select(c(cols, to , onehot))
 df_onehot = data.frame(predict(dummyVars('~.', data=df_), newdata=df_))
 
 pd.get_dummies(df['col'], prefix='prefix')
+```
+
+## iteration
+```python
+d.iterrows()
 ```
