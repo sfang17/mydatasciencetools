@@ -67,3 +67,10 @@ cross_validation = KFold(n_splits=5, shuffle=True, random_state=1337) # could al
 grid_search      = GridSearchCV(model, hyper_parameters, n_jobs=8, cv=cv, verbose=2, refit=True)
 grid_search.fit(x_train, y_train)
 ```
+
+## model evaluation
+```python
+# model eval
+y_pred_test  = grid_search.predict(x_test)
+y_pred_train = grid_search.predict(x_train)
+```
